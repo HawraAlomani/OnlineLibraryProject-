@@ -1,0 +1,21 @@
+{% extends "home.html" %}
+{% load static %}
+
+{% block title %} Edit Review {% endblock %}
+
+{% block content %}
+<body id= "bk" style="background-image: url({% static 'images/background2.png' %})">
+<br>
+<h2 style="text-align: center"> Edit Review </h2>
+<div style="margin-left: 100px; margin-top: 100px">
+
+  <form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+
+      <a href="{% url 'view:show_review' %}" style="color: lightslategray; margin-left: 20px"> Show All Reviews </a>
+ </form>
+
+</body>
+{% endblock %}
