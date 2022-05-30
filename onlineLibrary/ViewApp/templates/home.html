@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <meta charset="UTF-8">
+    {% block contect %}
+    <title>{% block title %} Home {% endblock %}</title>
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+
+  <div class="container-fluid">
+            <!--icon or logo-->
+      <nav class="navbar navbar-light bg-light">
+       <a class="navbar-brand" href="#">
+       <img src="{% static 'images/logo book.png' %}" width="50" height="40" alt="">
+        </a></nav>
+
+    <a class="navbar-brand" href="{% url 'view:home' %}">Magic Brains Library</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'view:home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'view:about' %}">About</a>
+        </li>
+           <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="{% url 'view:add_review' %}">Add Review</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Library
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="{% url 'library:all_books' %}"> All books </a></li>
+            <li><a class="dropdown-item" href="{% url 'library:add_book' %}"> Add book </a></li>
+          </ul>
+        </li>
+      </ul>
+
+
+
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+</div>
+
+</head>
+
+
+{% block content %} <!--page-specific code-->
+<body id= "bk" style="background-image: url({% static 'images/background1.png' %})" >
+<div class="welcome">
+<img src="{% static 'images/Welcome.png' %}">
+    <h3> Check out our recent choices of amazing books. </h3>
+</div>
+
+<div class="container">
+
+
+
+
+<!-- card 1 -->
+    <div class="card1">
+<div class="star">
+    <div class="body">
+<div class="wrapper">
+    <div class="card">
+        <img src="{% static 'images/queen-cover.jpg' %}">
+        <div class="info">
+            <h1>The Queen's Gambit</h1>
+            <p> an American novel, exploring the life of fictional female chess prodigy Beth Harmon.</p>
+            <a href="{% static 'pdf/queen gambit.pdf' %}" class="btn"> Read it </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- end of card-->
+        </div>
+<br>
+
+<!-- card 2 -->
+      <div class="card2">
+<div class="star">
+    <div class="body">
+<div class="wrapper">
+    <div class="card">
+        <img src="{% static 'images/harry-cover.jpeg' %}">
+        <div class="info">
+            <h1>Harry Potter</h1>
+            <p> The novels chronicle the lives of a young wizard, Harry Potter, and his friends.</p>
+            <a href="{% static 'pdf/HP_Book1_Chapter_Excerpt.pdf' %}" class="btn"> Read it </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- end of card-->
+         </div>
+<br>
+<!-- card 3 -->
+    <div class="card3">
+<div class="star">
+    <div class="body">
+<div class="wrapper">
+    <div class="card">
+        <img src="{% static 'images/stars-cover.jpg' %}">
+        <div class="info">
+            <h1>The Fault in Our Stars</h1>
+            <p>  a 16-year-old cancer patient, meets a young boy.</p>
+            <a href="{% static 'pdf/The Fault in Stars.pdf' %}" class="btn"> Read it </a>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!-- end of card-->
+        </div>
+</div>
+
+
+
+
+<div id="footer">
+
+</div>
+
+
+</body>
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</html>
